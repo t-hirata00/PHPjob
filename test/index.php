@@ -175,3 +175,77 @@ echo '<br>';
 
 echo '<br>';
 ?>
+
+<?php
+echo '<br>';
+$countries = ["America","Japan","China","Korea"];
+
+echo $countries[0];
+echo $countries[1];
+echo $countries[2];
+echo $countries[3];
+echo '<br>';
+
+var_dump($countries);
+?>
+
+<?php 
+echo '<br>';
+
+$fruits = ["apple"=>"リンゴ","orange"=>"みかん","grape"=>"ぶどう"];
+
+echo $fruits["apple"];
+echo $fruits["orange"];
+echo $fruits["grape"];
+echo '<br>';
+var_dump($fruits);
+
+echo '<br>';
+
+$fruits[3]="テスト";
+$fruits[]="テスト2";
+
+var_dump($fruits);
+echo '<br>';
+$fruits["peach"]="もも";
+echo '<br>';
+var_dump($fruits);
+
+echo '<br>';
+foreach ($fruits as $value) {
+    echo $value;
+}
+echo '<br>';
+foreach ($fruits as $key => $value) {
+    echo $key;
+    echo "と言ったら";
+    echo $value;
+    echo '<br>';
+    # code...
+}
+echo '<br>';
+
+?>
+
+<?php 
+echo '<br>';
+function getTriangleArea($base,$height){
+    $area = $base * $height /2;
+    print "三角形の面積は". $area ."だよ";
+}
+
+getTriangleArea(10,5);
+getTriangleArea(15,8);
+echo '<br>';
+?>
+
+<?php 
+echo '<br>';
+function menseki($tate,$yoko,$takasa){
+    $mennsekihi = $tate * $yoko * $takasa;
+    print "立方体の面積". $mennsekihi . "㎟";
+}
+
+menseki(10,10,10);
+echo '<br>';
+?>
