@@ -9,7 +9,7 @@ $errorMessage = "";
 $signUpMessage = "";
 
 // セッション開始
-session_start();
+//session_start();
 
 // ログインボタンが押された場合
 if (isset($_POST["signUp"])) {

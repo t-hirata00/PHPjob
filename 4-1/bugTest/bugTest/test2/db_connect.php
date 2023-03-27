@@ -1,6 +1,6 @@
 <?php
     //DB名
-    define('DB_DATABASE','yigroupBlog');
+    define('DB_DATABASE','yigroupblog');
     //MySQLのユーザー名
     define('DB_USERNAME','root');
     //MySQLのログインパスワード
@@ -13,7 +13,7 @@
      * @return object
      */
 
-    function db_connect(){
+    function connect(){
         try{
             // PDOインスタンスの作成
             $pdo = new PDO(PDO_DSN,DB_USERNAME,DB_PASSWORD);
