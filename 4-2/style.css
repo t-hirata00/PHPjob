@@ -1,0 +1,73 @@
+.container {
+    width: 1000px;
+}
+
+/* ヘッダー */
+.heder-main {
+    height: 120px;
+    width: auto;
+    display: flex;
+}
+
+/* ヘッダー左 */
+.heder-left {
+    background-color: #add8e6;
+    height: auto;
+    width: 200px;
+}
+
+.heder-left-img {
+    width: 200px;
+}
+
+/* ヘッダー右 */
+.heder-right {
+    height: auto;
+    width: 800px;
+}
+
+.heder-right-top {
+    height: 60px;
+    background-color: #87ceeb;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.heder-right-down {
+    background-color: #00ffff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.heder-right-position {
+    margin: auto;
+}
+
+/* main */
+
+.main {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.main-db {
+    margin: 10px auto;
+    /* ここから仮 */
+    background-color: #87ceed;
+    width: 500px;
+    height: 500px;
+    /* ここまで仮 */
+}
+
+/* footer */
+.footer {
+    width: auto;
+    height: 50px;
+    background-color: #00ced1;
+    display: flex;
+}
