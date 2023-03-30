@@ -1,3 +1,27 @@
+<?php
+require_once ('getData.php');
+
+function user(){
+  // echo "test";
+  $getData = new getData();
+  $user = $getData->getUserData();
+  // var_dump($user);
+  // echo $user['first_name'];
+  return $user;
+}
+$userArray = user();
+$username = $userArray['last_name'].$userArray['first_name'];
+$userLogin = $userArray['last_login'];
+
+function data(){
+  $getData = new getData();
+  $data = $getData->getPostData();
+  return $data;
+}
+$dataArray = data();
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -15,22 +39,45 @@
           </div>
           <div class="heder-right">
             <div class="heder-right-top">
-              <span class="header-right-position">test</span>
+              <span class="header-right-position">ようこそ <?php echo $username;?> さん</span>
             </div>
             <div class="heder-right-down">
-              <span class="header-right-position">test</span>
+              <span class="header-right-position">最終ログイン日時： <?php echo $userLogin ?></span>
             </div>
           </div>
         </div>
       </header>
       <main class="main">
-        <div class="main-db">
-          <!-- ユーザ情報、記事情報は、getDataクラスをインスタンス化して取得 -->
-        <?php user(); ?>
-        <?php
-        require_once ('getData.php');
+        <table class="main-db">
+        <!-- getdataインスタンス化 表の受け取り -->
+        <?php 
+        $getData = new getData();
+        $data = $getData->getPostData();
         ?>
-        </div>
+          <thead>
+            <tr>
+              <th>記事ID</th>
+              <th>タイトル</th>
+              <th>カテゴリ</th>
+              <th>本文</th>
+              <th>投稿日</th>
+            </tr>
+          </thead>
+          
+          <!-- ユーザ情報、記事情報は、getDataクラスをインスタンス化して取得 -->
+          <tbody>
+        <?php
+        while($row = $data->fetch(PDO::FETCH_ASSOC)){
+          echo '<tr>';
+          echo '<td>' . $row['id'] . '</td>';
+          echo '<td>' . $row['title'] . '</td>';
+          echo '<td>' . ($row['category_no'] == '1' ? '食事' : ($row['category_no'] == '2' ? '旅行' : 'その他')). '</td>';
+          echo '<td>' . $row['comment'] . '</td>';
+          echo '<td>' . $row['created'] . '</td>';
+          echo '</tr>';
+        }?>
+        </tbody>
+        </table>
       </main>
       <footer class="footer">
         <div class="footer-main">Y&I group.inc</div>
@@ -39,15 +86,3 @@
   </body>
 </html>
 
-<?php
-require_once ('getData.php');
-
-function user(){
-  echo "test";
-  $test = new getData();
-  
-  echo $test->getUserData();
-  // global $getData;
-  // $user = $getData->getUserData();
-  // echo $user;
-}
