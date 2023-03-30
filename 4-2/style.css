@@ -57,12 +57,22 @@
 
 .main-db {
     margin: 10px auto;
-    /* ここから仮 */
-    background-color: #87ceed;
-    width: 500px;
-    height: 500px;
-    /* ここまで仮 */
+
 }
+
+thead {
+    background-color: #87ceeb;
+}
+
+tbody {
+    background-color: #e0ffff;
+}
+
+th td {
+    border-color: transparent;
+    width: auto;
+}
+
 
 /* footer */
 .footer {
