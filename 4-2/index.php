@@ -50,10 +50,6 @@ $dataArray = data();
       <main class="main">
         <table class="main-db">
         <!-- getdataインスタンス化 表の受け取り -->
-        <?php 
-        $getData = new getData();
-        $data = $getData->getPostData();
-        ?>
           <thead>
             <tr>
               <th>記事ID</th>
@@ -67,7 +63,7 @@ $dataArray = data();
           <!-- ユーザ情報、記事情報は、getDataクラスをインスタンス化して取得 -->
           <tbody>
         <?php
-        while($row = $data->fetch(PDO::FETCH_ASSOC)){
+        foreach($dataArray as $row){
           echo '<tr>';
           echo '<td>' . $row['id'] . '</td>';
           echo '<td>' . $row['title'] . '</td>';
